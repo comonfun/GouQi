@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="borderPane" prefWidth="1266.0" stylesheets="@main-page.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pages.MainController">
+   <center>
+      <BorderPane fx:id="center" prefWidth="1010.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox fx:id="topBar" alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="1010.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="17.0" fitWidth="17.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/cancel.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" onMouseClicked="#min" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/minus.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="4.4" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="-5.0" />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+         <center>
+            <Pagination fx:id="selector" pageCount="10" prefWidth="1010.0" BorderPane.alignment="CENTER">
+            </Pagination>
+         </center></BorderPane>
+   </center>
+   <right>
+      <VBox fx:id="rightArea" alignment="TOP_CENTER" prefHeight="688.0" prefWidth="256.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label graphicTextGap="8.0" text="枸杞记账本">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1">
+                     <image>
+                        <Image preserveRatio="true" smooth="true" url="@../resources/app-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Microsoft JhengHei Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="-50.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+            <VBox alignment="CENTER" spacing="8.0">
+               <children>
+                  <Button fx:id="add" mnemonicParsing="false" onAction="#addData" prefHeight="40.0" prefWidth="200.0" text="增加数据" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="count" mnemonicParsing="false" onAction="#countAll" prefHeight="40.0" prefWidth="200.0" text="统计">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/sigma.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+
+                        <Button fx:id="weather" graphicTextGap="1.4" mnemonicParsing="false" onAction="#show" prefHeight="40.0" prefWidth="200.0" text="显示天气" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/weather.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="refresh" graphicTextGap="0.0" mnemonicParsing="false" onAction="#refresh" prefHeight="40.0" prefWidth="200.0" text=" 刷新位置" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/refresh.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="14.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="28.0" />
+               </VBox.margin>
+            </VBox>
+            <Label id="position" fx:id="position" contentDisplay="RIGHT" graphicTextGap="3.0" text="网络不可用">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/position.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="-20.0" />
+               </VBox.margin>
+            </Label>
+            <SplitPane id="mySplitePane" dividerPositions="0.3333, 0.6666" orientation="VERTICAL" prefHeight="256.0" prefWidth="256.0">
+               <items>
+                  <GridPane fx:id="gp1" alignment="CENTER_RIGHT" translateX="240.0">
+                    <columnConstraints>
+                      <ColumnConstraints />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="0.0" prefWidth="98.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="0.0" prefWidth="31.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="85.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" styleClass="iv1" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" styleClass="iv2" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="t1" text="出错" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="~" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="t2" text="出错" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </GridPane>
+                  <GridPane fx:id="gp2" alignment="CENTER_RIGHT" translateX="240.0">
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="0.0" prefWidth="98.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="0.0" prefWidth="31.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="85.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" styleClass="iv1" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" styleClass="iv2" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="t1" text="出错" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="~" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="t2" text="出错" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </GridPane>
+                  <GridPane fx:id="gp3" alignment="CENTER_RIGHT" translateX="240.0">
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="0.0" prefWidth="98.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="0.0" prefWidth="31.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="85.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" styleClass="iv1" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" styleClass="iv2" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="t1" text="出错" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="~" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="t2" text="出错" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </GridPane>
+               </items>
+            </SplitPane>
+            <Label fx:id="userName" onMouseClicked="#login" text="未登录">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Microsoft YaHei" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

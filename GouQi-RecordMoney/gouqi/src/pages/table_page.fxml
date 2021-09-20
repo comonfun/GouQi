@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<TableView fx:id="table_view" prefHeight="642.0" prefWidth="1010.0" tableMenuButtonVisible="true" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pages.TableController">
+
+    <columns>
+        <TableColumn prefWidth="75.0" text="序号" fx:id="xuhao">
+            <cellValueFactory>
+                <PropertyValueFactory property="id" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="type" prefWidth="118.0" text="类型">
+            <cellValueFactory>
+                <PropertyValueFactory property="type" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="num" minWidth="0.0" prefWidth="204.0" text="数额">
+            <cellValueFactory>
+                <PropertyValueFactory property="number" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="date" minWidth="2.0" prefWidth="177.0" text="日期">
+            <cellValueFactory>
+                <PropertyValueFactory property="date" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="mark" minWidth="0.0" prefWidth="234.0" text="备注">
+            <cellValueFactory>
+                <PropertyValueFactory property="mark" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="operate" minWidth="0.0" prefWidth="188.0" text="操作">
+        </TableColumn>
+    </columns>
+    <sortOrder>
+        <fx:reference source="xuhao" />
+    </sortOrder>
+</TableView>

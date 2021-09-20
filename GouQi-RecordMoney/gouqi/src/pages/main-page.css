@@ -1,0 +1,63 @@
+.root {
+    -fx-background-color: rgba(255,255,255,0.6);
+}
+
+#center {
+    -fx-background-color: white;
+}
+
+#mySplitePane {
+    -fx-background-color: transparent;
+}
+
+#mySplitePane *.split-pane-divider,
+#mySplitePane *.vertical-grabber,
+#mySplitePane *.horizontal-grabber {
+    -fx-background-color: null;
+    -fx-border-color: null;
+}
+
+
+#rightArea .button {
+    -fx-background-color: transparent;
+    -fx-font-size: 16px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 8;
+}
+
+
+#rightArea .button:hover{
+    -fx-text-fill: rgba(0,0,0,1);
+    -fx-background-color: rgba(151, 145, 145, 0.23);
+    -fx-cursor: hand;
+}
+
+#rightArea .button:focused {
+    -fx-background-color: #FAFDFE;
+    -fx-opacity: 1;
+}
+
+#count {
+    -fx-font-size: 8px;
+}
+
+#weather:focused {
+    -fx-graphic: url('../resources/weather_active.png');
+}
+
+#add:focused {
+    -fx-graphic: url('../resources/plus_active.png');
+}
+
+#refresh:focused {
+    -fx-graphic: url('../resources/refresh_active.png');
+}
+
+#count:focused {
+    -fx-graphic: url('../resources/sigma_active.png');
+}
+
+.image-view {
+    -fx-cursor: hand;
+}
+

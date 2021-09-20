@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'ZCOOL XiaoWei';
+    font-weight: regular;
+    src: local('ZCOOL XiaoWei'), url('../resources/ZCOOLXiaoWei-Regular.ttf') format('truetype');
+}
+.root {
+    -fx-background-color: tomato;
+}
+
+.button,.label {
+    -fx-font-family: "ZCOOL XiaoWei", serif;
+    -fx-font-size: 19px;
+}
+
+#tip {
+    -fx-font-size: 12px;
+    -fx-text-fill: red;
+}
+
